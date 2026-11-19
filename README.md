@@ -130,6 +130,8 @@ tab's notifications, activity sounds and launcher badge for this run, without hi
 activity. Removing a host asks first and leaves its sessions running. See
 [the action audit](docs/action-coverage.md) for coverage and platform differences.
 
+**Close Session…** asks for confirmation before ending every program in the current session.
+
 ### Copy mode
 
 **Ctrl+Shift+Space** enters copy mode in the focused pane (**Shift+Command+C** on macOS).

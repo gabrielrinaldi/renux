@@ -38,6 +38,7 @@ const small_actions = [_]struct { title: []const u8, name: []const u8, category:
     .{ .title = "Switch host", .name = "client.host.switch", .category = "Host" },
     .{ .title = "Remove host…", .name = "client.host.remove", .category = "Host" },
     .{ .title = "Refresh sessions", .name = "session.refresh", .category = "Session" },
+    .{ .title = "Close Session…", .name = "session.close", .category = "Session" },
     .{ .title = "Copy pane ID", .name = "pane.copy_id", .category = "Pane" },
     .{ .title = "Select all in pane", .name = "pane.select_all", .category = "Pane" },
     .{ .title = "Copy from pane", .name = "pane.copy", .category = "Pane" },
