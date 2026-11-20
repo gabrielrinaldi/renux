@@ -35,6 +35,7 @@ const window_radius = 12;
 const css =
     \\window.renux, window.renux .sidebar-pane { background-color: @renux_shell; }
     \\*, *:focus-visible, *:focus-within { outline: none; outline-width: 0; }
+    \\.close-session-confirmation button:focus { outline: 2px solid @window_fg_color; outline-offset: -3px; }
     \\.carry-ghost { background-color: mix(@view_bg_color, @window_fg_color, 0.1); border: 1.5px solid alpha(@accent_bg_color, 0.9); border-radius: 10px; box-shadow: 0 5px 18px alpha(black, 0.35); }
     \\.font-preview { padding: 12px 14px; }
     \\.hover-card > contents { padding: 12px 14px; border-radius: 13px; min-width: 250px; }
@@ -3454,8 +3455,9 @@ pub const App = struct {
 
     fn confirmCloseSessionOn(a: *App, host: *Host, sid: []const u8) bool {
         const dialog = adw.AlertDialog.new("Close this session?", "Every window and program in it ends.");
-        dialog.addResponse("cancel", "Cancel");
+        dialog.as(gtk.Widget).addCssClass("close-session-confirmation");
         dialog.addResponse("close", "Close Session");
+        dialog.addResponse("cancel", "Cancel");
         dialog.setResponseAppearance("close", .destructive);
         dialog.setDefaultResponse("cancel");
         dialog.setCloseResponse("cancel");
